@@ -1,8 +1,8 @@
 package go_mruby
 
-//#cgo CFLAGS: -Iinclude
+//#cgo CFLAGS: -Imruby/include
 //#cgo CFLAGS: -std=c99
-//#cgo LDFLAGS: ./libmruby.a -lm
+//#cgo LDFLAGS: ./mruby/libmruby.a -lm
 //#include <mruby.h>
 //#include <mruby/compile.h>
 //
