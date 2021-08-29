@@ -7,5 +7,5 @@ go get webimizer.dev/go_mruby
 IMPORTANT: When you run go get command you may get error. To fix that, you need to copy file libmruby.a to your project root directory. Example bash command to run on your project root directory:
 ```sh
 export GOPATH=$(go env GOPATH)
-cp $GOPATH/pkg/mod/webimizer.dev/go_mruby@v1.0.0-beta6/mruby/libmruby.a ./mruby/libmruby.a
+cp $GOPATH/pkg/mod/webimizer.dev/go_mruby@v1.0.0-beta7/mruby/libmruby.a ./mruby/libmruby.a
 ```
