@@ -15,6 +15,6 @@ package go_mruby
 //}
 import "C"
 
-func mruby_load_from_string(code string) {
+func Mruby_load_from_string(code string) {
 	C.mruby_load_from_string(C.CString(code))
 }
