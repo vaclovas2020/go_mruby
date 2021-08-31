@@ -22,7 +22,7 @@ static void mruby_load_irep_file(char *fname)
     fprintf(stderr, "mrb_state is not open!");
     return;
   }
-  mrb_load_irep_file(mrb, fname);
+  mrb_load_irep_file(mrb, file);
   fclose(file);
 }
 
