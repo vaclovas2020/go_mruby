@@ -1,5 +1,6 @@
 #include <mruby.h>
 #include <mruby/compile.h>
+#include <mruby/dump.h>
 #include <stdio.h>
 
 static mrb_state *mrb;
