@@ -29,6 +29,7 @@ static void mruby_load_from_file(char *fname, char *entry_point_func_name)
   }
   mrb_value obj = mrb_load_file(mrb, file);
   mrb_funcall(mrb, obj, entry_point_func_name, 0);
+  fclose(file);
 }
 
 static void mruby_close()
