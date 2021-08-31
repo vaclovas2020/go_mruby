@@ -19,9 +19,14 @@ static void mruby_load_from_string(char *code)
   mrb_load_string(mrb, code);
 }
 
-static void mruby_load_from_file(char *fname, char *entry_point_func_name)
+static void mruby_load_from_file_entry_point(char *fname, char *entry_point_func_name)
 {
   FILE *file = fopen(fname, "r");
+  if (!file)
+  {
+    fprintf(stderr, "cannot open file!");
+    return;
+  }
   if (!mrb)
   {
     fprintf(stderr, "mrb_state is not open!");
@@ -29,6 +34,23 @@ static void mruby_load_from_file(char *fname, char *entry_point_func_name)
   }
   mrb_value obj = mrb_load_file(mrb, file);
   mrb_funcall(mrb, obj, entry_point_func_name, 0);
+  fclose(file);
+}
+
+static void mruby_load_from_file(char *fname)
+{
+  FILE *file = fopen(fname, "r");
+  if (!file)
+  {
+    fprintf(stderr, "cannot open file!");
+    return;
+  }
+  if (!mrb)
+  {
+    fprintf(stderr, "mrb_state is not open!");
+    return;
+  }
+  mrb_load_file(mrb, file);
   fclose(file);
 }
 

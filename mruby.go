@@ -10,8 +10,12 @@ func Mruby_load_from_string(code string) {
 	C.mruby_load_from_string(C.CString(code))
 }
 
-func Mruby_load_from_file(filepath string, entryPoint string) {
-	C.mruby_load_from_file(C.CString(filepath), C.CString(entryPoint))
+func Mruby_load_from_file(filepath string) {
+	C.mruby_load_from_file(C.CString(filepath))
+}
+
+func Mruby_load_from_file_entry_point(filepath string, entryPoint string) {
+	C.mruby_load_from_file_entry_point(C.CString(filepath), C.CString(entryPoint))
 }
 
 func Mruby_open() {
