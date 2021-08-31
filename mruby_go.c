@@ -8,6 +8,22 @@ static void mruby_open()
 {
   mrb = mrb_open();
 }
+static void mruby_load_irep_file(char *fname)
+{
+  FILE *file = fopen(fname, "r");
+  if (!file)
+  {
+    fprintf(stderr, "cannot open file!");
+    return;
+  }
+  if (!mrb)
+  {
+    fprintf(stderr, "mrb_state is not open!");
+    return;
+  }
+  mrb_load_irep_file(mrb, fname);
+  fclose(file);
+}
 
 static void mruby_load_from_string(char *code)
 {
