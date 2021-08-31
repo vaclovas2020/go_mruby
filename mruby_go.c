@@ -6,7 +6,7 @@ static mrb_state *mrb;
 
 static void mruby_open()
 {
-  mrb_state *mrb = mrb_open();
+  mrb = mrb_open();
 }
 
 static void mruby_load_from_string(char *code)
